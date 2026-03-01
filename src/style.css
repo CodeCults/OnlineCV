@@ -95,6 +95,40 @@ body {
   text-shadow: 0 0 20px var(--electric-blue-glow);
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  transition: color 0.2s;
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+  color: var(--electric-blue);
+}
+
+.lang-divider {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  user-select: none;
+}
+
 .nav-links {
   display: flex;
   gap: 2rem;
@@ -163,6 +197,20 @@ body {
   display: flex;
   transform: translateY(0);
   opacity: 1;
+}
+
+.mobile-menu-lang {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--anthracite-light);
+}
+
+.mobile-menu-lang .lang-btn {
+  color: var(--text-primary);
+  font-size: 1rem;
 }
 
 .mobile-menu a {
@@ -269,6 +317,39 @@ body {
   height: 20px;
   background: rgba(255, 255, 255, 0.4);
   margin: 0 0.25rem;
+}
+
+.hero-about {
+  margin-top: 2.5rem;
+  max-width: 520px;
+  padding: 1.5rem 1.75rem;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.hero-about p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.hero-about p:last-child {
+  margin-bottom: 0;
+}
+
+.hero-about a {
+  color: var(--electric-blue);
+  text-decoration: none;
+}
+
+.hero-about a:hover {
+  color: var(--electric-blue-bright);
+  text-decoration: underline;
 }
 
 /* Reusable btn for other sections */
@@ -449,11 +530,6 @@ section {
 }
 
 /* About */
-.about {
-  padding-top: 2rem;
-  padding-bottom: 3rem;
-}
-
 .about-content {
   max-width: 560px;
   margin: 0 auto;
@@ -512,7 +588,11 @@ section {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .nav-links {
+  .nav-right .nav-links {
+    display: none;
+  }
+
+  .nav-right .lang-switcher {
     display: none;
   }
 

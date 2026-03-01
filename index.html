@@ -19,10 +19,17 @@
       <!-- Navigation -->
       <nav class="nav">
         <a href="#" class="logo">eren.dev</a>
-        <div class="nav-links">
-          <a href="#projects">Projects</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+        <div class="nav-right">
+          <div class="lang-switcher">
+            <button type="button" class="lang-btn active" data-lang="tr" aria-label="Türkçe">TR</button>
+            <span class="lang-divider">/</span>
+            <button type="button" class="lang-btn" data-lang="en" aria-label="English">EN</button>
+          </div>
+          <div class="nav-links">
+            <a href="#projects" data-i18n="nav.projects">Projects</a>
+            <a href="#about" data-i18n="nav.about">About</a>
+            <a href="#contact" data-i18n="nav.contact">Contact</a>
+          </div>
         </div>
         <button class="menu-btn" id="menuBtn" aria-label="Menu">
           <span></span>
@@ -33,17 +40,22 @@
 
       <!-- Mobile Menu -->
       <div class="mobile-menu" id="mobileMenu">
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <div class="mobile-menu-lang">
+          <button type="button" class="lang-btn" data-lang="tr">TR</button>
+          <span class="lang-divider">/</span>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
       </div>
 
       <!-- Hero -->
       <header class="hero">
         <h1 class="hero-title">Eren</h1>
         <div class="hero-buttons">
-          <a href="#projects" class="hero-btn hero-btn--primary">Student</a>
-          <a href="mailto:" class="hero-btn hero-btn--secondary">Click to send an E-mail</a>
+          <a href="#projects" class="hero-btn hero-btn--primary" data-i18n="hero.student">Student</a>
+          <a href="mailto:" class="hero-btn hero-btn--secondary" data-i18n="hero.email">Click to send an E-mail</a>
         </div>
         <div class="hero-social">
           <a href="mailto:" aria-label="Email">
@@ -62,24 +74,20 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           </a>
         </div>
-      </header>
-
-      <!-- About -->
-      <section class="about" id="about">
-        <div class="about-content">
-          <p>Merhaba, ben Eren. Özel Adem Ceylan Final Teknik Koleji'nde Bilişim Teknolojileri öğrencisiyim. Yazılım geliştirme, web uygulamaları ve mobil projelerle ilgileniyorum. Takım çalışmasına önem veriyor, yeni teknolojileri keşfetmeyi seviyorum.</p>
-          <p>Projelerime <a href="https://github.com/CodeCults" target="_blank" rel="noopener">GitHub</a> üzerinden ulaşabilirsiniz.</p>
+        <div class="hero-about" id="about">
+          <p data-i18n-html="hero.about1"></p>
+          <p data-i18n-html="hero.about2"></p>
         </div>
-      </section>
+      </header>
 
       <!-- Currently Working On -->
       <section class="currently-working" id="currently-working">
-        <h2 class="section-title section-title--small">Currently working on</h2>
+        <h2 class="section-title section-title--small" data-i18n="currentlyWorking.title">Currently working on</h2>
         <div class="currently-working-grid">
           <a href="https://github.com/yunuzq/e_cenaze/tree/main" target="_blank" rel="noopener" class="currently-working-card">
             <div class="currently-working-content">
               <h3>e_cenaze</h3>
-              <p>Currently working on this app with my friends. Working as a team was hard at first but now we can handle it.</p>
+              <p data-i18n="currentlyWorking.e_cenaze">Currently working on this app with my friends. Working as a team was hard at first but now we can handle it.</p>
               <span class="tech">Flutter · Dart</span>
             </div>
             <span class="currently-working-arrow">→</span>
@@ -87,7 +95,7 @@
           <a href="https://github.com/CodeCults/Study-Mate" target="_blank" rel="noopener" class="currently-working-card">
             <div class="currently-working-content">
               <h3>Study-Mate</h3>
-              <p>Study companion application for students.</p>
+              <p data-i18n="currentlyWorking.studyMate">Study companion application for students.</p>
               <span class="tech">JavaScript · TypeScript</span>
             </div>
             <span class="currently-working-arrow">→</span>
@@ -97,56 +105,39 @@
 
       <!-- Projects -->
       <section class="projects" id="projects">
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title" data-i18n="projects.title">Projects</h2>
         <div class="projects-grid">
           <article class="project-card">
             <h3>Auto-Summarizer</h3>
-            <p>AI-powered text summarization tool</p>
+            <p data-i18n="project.autoSummarizer">AI-powered text summarization tool</p>
             <span class="tech">TypeScript</span>
             <div class="project-links">
-              <a href="https://github.com/CodeCults/Auto-Summarizer" target="_blank" rel="noopener">Code</a>
-              <a href="https://auto-summarizer.vercel.app" target="_blank" rel="noopener">Live</a>
-            </div>
-          </article>
-          <article class="project-card">
-            <h3>CV</h3>
-            <p>Online CV / Portfolio</p>
-            <span class="tech">TypeScript</span>
-            <div class="project-links">
-              <a href="https://github.com/CodeCults/CV" target="_blank" rel="noopener">Code</a>
-              <a href="https://ozaltindev.vercel.app" target="_blank" rel="noopener">Live</a>
+              <a href="https://github.com/CodeCults/Auto-Summarizer" target="_blank" rel="noopener" data-i18n="project.code">Code</a>
+              <a href="https://auto-summarizer.vercel.app" target="_blank" rel="noopener" data-i18n="project.live">Live</a>
             </div>
           </article>
           <article class="project-card">
             <h3>Load-It</h3>
-            <p>Fitness tracking application</p>
+            <p data-i18n="project.loadIt">Fitness tracking application</p>
             <span class="tech">TypeScript</span>
             <div class="project-links">
-              <a href="https://github.com/CodeCults/Load-It" target="_blank" rel="noopener">Code</a>
+              <a href="https://github.com/CodeCults/Load-It" target="_blank" rel="noopener" data-i18n="project.code">Code</a>
             </div>
           </article>
           <article class="project-card">
             <h3>Basic-Spoofer</h3>
-            <p>Discord ban bypass utility</p>
+            <p data-i18n="project.basicSpoofer">Discord ban bypass utility</p>
             <span class="tech">Python</span>
             <div class="project-links">
-              <a href="https://github.com/CodeCults/Basic-Spoofer" target="_blank" rel="noopener">Code</a>
+              <a href="https://github.com/CodeCults/Basic-Spoofer" target="_blank" rel="noopener" data-i18n="project.code">Code</a>
             </div>
           </article>
-          <article class="project-card">
-            <h3>To-Do-List</h3>
-            <p>Trying to learn JS, CSS, HTML</p>
-            <span class="tech">HTML</span>
-            <div class="project-links">
-              <a href="https://github.com/CodeCults/To-Do-List" target="_blank" rel="noopener">Code</a>
-            </div>
-          </article>
-        </div>
+          </div>
       </section>
 
       <!-- Contact -->
       <section class="contact" id="contact">
-        <h2 class="section-title">Contact</h2>
+        <h2 class="section-title" data-i18n="contact.title">Contact</h2>
         <div class="contact-links">
           <a href="https://github.com/CodeCults" target="_blank" rel="noopener">GitHub</a>
         </div>
@@ -154,7 +145,7 @@
 
       <!-- Footer -->
       <footer class="footer">
-        <p>© 2026 Eren · Built with passion</p>
+        <p data-i18n="footer.text">© 2026 Eren · Built with passion</p>
       </footer>
     </div>
     <script type="module" src="/src/main.ts"></script>

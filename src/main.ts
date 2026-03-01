@@ -31,10 +31,28 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
   })
   requestAnimationFrame(updateCursor)
 
-  const hoverTargets = 'a, button, .project-card, .currently-working-card, .hero-btn'
+  const hoverTargets = 'a, button, .project-card, .currently-working-card, .hero-btn, .skill-item'
   document.querySelectorAll(hoverTargets).forEach((el) => {
     el.addEventListener('mouseenter', () => cursorTrail.classList.add('hover'))
     el.addEventListener('mouseleave', () => cursorTrail.classList.remove('hover'))
+  })
+
+  // Skill tooltip - click for mobile
+  document.querySelectorAll('.skill-item').forEach((item) => {
+    item.addEventListener('click', (e) => {
+      if (window.matchMedia('(hover: none)').matches) {
+        e.preventDefault()
+        document.querySelectorAll('.skill-item.active').forEach((other) => {
+          if (other !== item) other.classList.remove('active')
+        })
+        item.classList.toggle('active')
+      }
+    })
+  })
+  document.addEventListener('click', (e) => {
+    if (!(e.target as Element).closest('.skill-item') && window.matchMedia('(hover: none)').matches) {
+      document.querySelectorAll('.skill-item.active').forEach((el) => el.classList.remove('active'))
+    }
   })
 }
 
